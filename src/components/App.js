@@ -6,7 +6,7 @@ import calculate from '../logic/calculate';
 // eslint-disable-next-line react/prefer-stateless-function
 class App extends React.Component {
   render() {
-    console.log(calculate({total: '512+2155' }, '9'));
+    console.log(calculate({ total: '5', next: '16', operation: '÷' }, '='));
     return (
       <div className="app">
         <Display />
