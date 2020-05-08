@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
 .app {
 width: 700px;
 }
@@ -19,7 +23,23 @@ width: 700px;
     padding: 10px 10px;
     color:white;
     font-size: 50px;
-    font-family: 'Roboto', sans-serif;
     font-weight: bold;
+}
 
+.buttons {
+    height: 100px;
+    display:flex;
+}
+
+.buttons button {
+    font-size:30px;
+    border:1px solid rgb(196, 190, 190);
+}
+
+.buttons button:not(.button0)  {
+    width: 25%
+}
+
+.button0 {
+    width: 50%
 }
