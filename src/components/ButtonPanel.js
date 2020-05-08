@@ -3,11 +3,12 @@ import Button from './Button';
 
 class ButtonPanel extends React.Component {
   // eslint-disable-next-line class-methods-use-this
-  renderButtons(i, c) {
+  renderButtons(i, c, d) {
     return (
       <Button
         name={i}
         color={c}
+        wide={d}
       />
     );
   }
@@ -40,7 +41,7 @@ class ButtonPanel extends React.Component {
           {this.renderButtons('+')}
         </div>
         <div className="buttons group5">
-          {this.renderButtons('0', '#e7e7e7')}
+          {this.renderButtons('0', '#e7e7e7', true)}
           {this.renderButtons(' .', '#e7e7e7')}
           {this.renderButtons('=')}
         </div>
