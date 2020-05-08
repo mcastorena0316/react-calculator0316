@@ -7,8 +7,10 @@ class Display extends React.Component {
   render() {
     const { result } = this.props;
     return (
-      <div>
-        {result}
+      <div className="display">
+        <h4 className="display-result">
+          {result}
+        </h4>
       </div>
     );
   }

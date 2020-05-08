@@ -11,20 +11,20 @@ class ButtonPanel extends React.Component {
 
   render() {
     return (
-      <div>
-        <div className="group1">
+      <div className="button-panel">
+        <div className="buttons group1">
           {this.renderButtons('AC')}
           {this.renderButtons('+/-')}
           {this.renderButtons('%')}
           {this.renderButtons('÷')}
         </div>
-        <div className="group2">
+        <div className="buttons group2">
           {this.renderButtons('7')}
           {this.renderButtons('8')}
           {this.renderButtons('9')}
           {this.renderButtons('X')}
         </div>
-        <div className="group3">
+        <div className="buttons group3">
           {this.renderButtons('4')}
           {this.renderButtons('5')}
           {this.renderButtons('6')}
