@@ -1,16 +1,37 @@
 import React from 'react';
 import Display from './Display';
 import ButtonPanel from './ButtonPanel';
-// eslint-disable-next-line no-unused-vars
 import calculate from '../logic/calculate';
 
-// eslint-disable-next-line react/prefer-stateless-function
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = ({
+      total: null,
+      next: null,
+      operation: null,
+    });
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(buttonName) {
+    const { total, next, operation } = this.state;
+
+    const calculator = calculate({ total, next, operation }, buttonName);
+    this.setState({
+      total: calculator.total,
+      next: calculator.next,
+      operation: calculator.operation,
+
+    });
+  }
+
   render() {
+    const { total, next } = this.state;
     return (
       <div className="app">
-        <Display />
-        <ButtonPanel />
+        <Display result={total || next} />
+        <ButtonPanel clickHandler={this.handleClick} />
       </div>
     );
   }
