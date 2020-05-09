@@ -13,15 +13,19 @@ width: 700px;
     height:100px;
     background-color: rgb(153, 145, 145);
     display:flex;
-    justify-content:flex-end;
+    justify-content: space-between;
     align-items: center;
+    color:white;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.display .display-operator{
+    padding: 10px 13px
 }
 
 .display .display-result {
     padding: 10px 10px;
-    color:white;
-    font-size: 50px;
-    font-weight: bold;
 }
 
 .buttons {
@@ -32,4 +36,8 @@ width: 700px;
 .buttons button {
     font-size:30px;
     border:1px solid rgb(196, 190, 190);
+}
+
+.buttons button:focus {
+    border: 2px solid black;
 }

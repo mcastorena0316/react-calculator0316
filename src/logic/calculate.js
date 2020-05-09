@@ -26,6 +26,10 @@ const calculate = (calculator, buttonName) => {
       total = null;
       next = '0';
       operation = buttonName;
+    } else if (next && operation && total) {
+      next = operate(parseFloat(next), parseFloat(total), operation);
+      total = null;
+      operation = buttonName;
     } else {
       next = total;
       total = null;
@@ -33,9 +37,12 @@ const calculate = (calculator, buttonName) => {
     }
   } else if (buttonName === '=') {
     if (!next) {
-      total = operate(null, total, operation);
       next = null;
-      operation = null;
+      operation = buttonName;
+    } else if (!total) {
+      total = next;
+      next = null;
+      operation = buttonName;
     } else {
       total = operate(parseFloat(next), total, operation);
       next = null;
