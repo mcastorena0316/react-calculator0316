@@ -3,10 +3,10 @@ import operate from './operate';
 const calculate = (calculator, buttonName) => {
   let { total, next, operation } = calculator;
 
-  const numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+  const numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.'];
   const operators = ['+', '-', 'X', '÷', '%'];
 
-  if (numbers.includes(buttonName) || buttonName === '.') {
+  if (numbers.includes(buttonName)) {
     if (total) {
       total += buttonName;
     } else {
@@ -24,10 +24,10 @@ const calculate = (calculator, buttonName) => {
   } else if (operators.includes(buttonName)) {
     if (!next && !total) {
       total = null;
-      next = 0;
+      next = '0';
       operation = buttonName;
     } else {
-      next = parseFloat(total);
+      next = total;
       total = null;
       operation = buttonName;
     }
@@ -37,7 +37,7 @@ const calculate = (calculator, buttonName) => {
       next = null;
       operation = null;
     } else {
-      total = operate(next, total, operation);
+      total = operate(parseFloat(next), total, operation);
       next = null;
       operation = null;
     }

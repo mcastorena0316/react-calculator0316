@@ -54,7 +54,7 @@ class ButtonPanel extends React.Component {
         </div>
         <div className="buttons group5">
           {this.renderButtons('0', '#e7e7e7', true)}
-          {this.renderButtons(' .', '#e7e7e7')}
+          {this.renderButtons('.', '#e7e7e7')}
           {this.renderButtons('=')}
         </div>
       </div>

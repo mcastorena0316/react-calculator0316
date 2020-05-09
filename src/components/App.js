@@ -30,7 +30,7 @@ class App extends React.Component {
     const { total, next } = this.state;
     return (
       <div className="app">
-        <Display result={total || next} />
+        <Display result={total || next || '0'} />
         <ButtonPanel clickHandler={this.handleClick} />
       </div>
     );
