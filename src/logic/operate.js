@@ -1,4 +1,4 @@
-import Big from 'big-js';
+import Big from 'big.js';
 
 const operate = (numberOne, numberTwo, operation) => {
   let total;
@@ -15,8 +15,8 @@ const operate = (numberOne, numberTwo, operation) => {
       total = Big(numberOne).div(numberTwo).toString();
     }
   } else if (operation === '%') {
-    if (!numberOne) {
-      total = Big(numberTwo).div(100).toString();
+    if (!numberTwo) {
+      total = Big(numberOne).div(100).toString();
     } else {
       total = (Big(numberTwo).times(numberOne)).div(100).toString();
     }
