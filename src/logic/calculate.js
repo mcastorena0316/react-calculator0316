@@ -25,10 +25,16 @@ const calculate = (calculator, buttonName) => {
     next = parseFloat(total);
     total = null;
     operation = buttonName;
-  } else {
-    total = operate(next, total, operation);
-    next = null;
-    operation = null;
+  } else if (buttonName === '=') {
+    if (!next) {
+      total = operate(null, total, operation);
+      next = null;
+      operation = null;
+    } else {
+      total = operate(next, total, operation);
+      next = null;
+      operation = null;
+    }
   }
 
   return { total, next, operation };
