@@ -1,14 +1,26 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Button from './Button';
 
+
 class ButtonPanel extends React.Component {
-  // eslint-disable-next-line class-methods-use-this
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(buttonName) {
+    const { clickHandler } = this.props;
+    return clickHandler(buttonName);
+  }
+
   renderButtons(i, c, d) {
     return (
       <Button
-        name={i}
+        buttonName={i}
         color={c}
         wide={d}
+        clickHandler={this.handleClick}
       />
     );
   }
@@ -50,4 +62,11 @@ class ButtonPanel extends React.Component {
   }
 }
 
+ButtonPanel.propTypes = {
+  clickHandler: PropTypes.func,
+};
+
+ButtonPanel.defaultProps = {
+  clickHandler: null,
+};
 export default ButtonPanel;

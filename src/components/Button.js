@@ -4,20 +4,32 @@ import PropTypes from 'prop-types';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class Button extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    const { clickHandler } = this.props;
+    const { buttonName } = this.props;
+    return clickHandler(buttonName);
+  }
+
   render() {
-    const { name } = this.props;
+    const { buttonName } = this.props;
     const { color } = this.props;
     const { wide } = this.props;
     return (
       <button
-        className={`button${name}`}
+        className={`button${buttonName}`}
         style={{
           backgroundColor: color,
           width: wide === true ? '50%' : '25%',
         }}
+        onClick={this.handleClick}
         type="button"
       >
-        {name}
+        {buttonName}
       </button>
     );
   }
@@ -26,12 +38,15 @@ class Button extends React.Component {
 Button.defaultProps = {
   color: 'rgb(243, 130, 53)',
   wide: false,
+  clickHandler: null,
 };
 
 Button.propTypes = {
-  name: PropTypes.string.isRequired,
   color: PropTypes.string,
   wide: PropTypes.bool,
+  clickHandler: PropTypes.func,
+  buttonName: PropTypes.string.isRequired,
+
 };
 
 export default Button;
