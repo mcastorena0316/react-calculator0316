@@ -22,9 +22,15 @@ const calculate = (calculator, buttonName) => {
       next = (parseFloat(next) * -1).toString();
     }
   } else if (operators.includes(buttonName)) {
-    next = parseFloat(total);
-    total = null;
-    operation = buttonName;
+    if (!next && !total) {
+      total = null;
+      next = 0;
+      operation = buttonName;
+    } else {
+      next = parseFloat(total);
+      total = null;
+      operation = buttonName;
+    }
   } else if (buttonName === '=') {
     if (!next) {
       total = operate(null, total, operation);
