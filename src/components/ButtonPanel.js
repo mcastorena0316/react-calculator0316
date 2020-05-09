@@ -3,12 +3,12 @@ import Button from './Button';
 
 class ButtonPanel extends React.Component {
   // eslint-disable-next-line class-methods-use-this
-  renderButtons(i, c, d) {
+  renderButtons(name, colorbutton, widebutton) {
     return (
       <Button
-        name={i}
-        color={c}
-        wide={d}
+        buttonName={name}
+        color={colorbutton}
+        wide={widebutton}
       />
     );
   }
