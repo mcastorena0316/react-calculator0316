@@ -35,9 +35,23 @@ width: 700px;
 
 .buttons button {
     font-size:30px;
+}
+
+.button-gray {
     border:1px solid rgb(196, 190, 190);
 }
 
-.buttons button:focus {
-    border: 2px solid black;
+.button-orange{
+    border:1px solid rgb(241, 115, 31);; 
+}
+
+
+.button-gray:hover, .button-gray:focus{
+    background-color: rgb(199, 191, 191) !important;
+    outline-color: gray;
+}
+
+.button-orange:hover, .button-orange:focus{
+    background-color: rgb(238, 103, 13) !important;
+    outline-color: orangered ;
 }

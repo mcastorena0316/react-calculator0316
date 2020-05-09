@@ -20,7 +20,7 @@ class Button extends React.Component {
     const { wide } = this.props;
     return (
       <button
-        className={`button${buttonName}`}
+        className={color === 'rgb(243, 130, 53)' ? 'button-orange' : 'button-gray'}
         style={{
           backgroundColor: color,
           width: wide === true ? '50%' : '25%',
