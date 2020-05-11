@@ -5,22 +5,35 @@ body {
 }
 
 .app {
-    width: 700px;
-    display: flex;
-    flex-direction: column;
+width: 700px;
+display: flex;
+flex-direction: column;
+margin: 0 auto;
 }
 
 .display {
     width:700px;
     height:100px;
     background-color: rgb(153, 145, 145);
-    display: flex;
-    justify-content:flex-end;
+    display:flex;
+    justify-content: space-between;
     align-items: center;
+    color:white;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.display .display-operator{
+    padding: 10px 13px
 }
 
 .display .display-result {
     padding: 10px 10px;
+}
+
+.button-panel {
+    display: flex;
+    flex-direction: column;
     color:white;
     font-size: 51px;
     font-weight: bold;
@@ -38,5 +51,23 @@ body {
 
 .buttons button {
     font-size:30px;
+}
+
+.button-gray {
     border:1px solid rgb(196, 190, 190);
+}
+
+.button-orange{
+    border:1px solid rgb(241, 115, 31);; 
+}
+
+
+.button-gray:hover, .button-gray:focus{
+    background-color: rgb(199, 191, 191) !important;
+    outline-color: gray;
+}
+
+.button-orange:hover, .button-orange:focus{
+    background-color: rgb(238, 103, 13) !important;
+    outline-color: orangered ;
 }
