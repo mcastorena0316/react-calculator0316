@@ -34,6 +34,14 @@ margin: 0 auto;
 .button-panel {
     display: flex;
     flex-direction: column;
+    color:white;
+    font-size: 51px;
+    font-weight: bold;
+}
+
+.button-panel {
+    display: flex;
+    flex-direction: column;
 }
 
 .buttons {

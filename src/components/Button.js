@@ -41,11 +41,10 @@ Button.defaultProps = {
 };
 
 Button.propTypes = {
+  buttonName: PropTypes.string.isRequired,
   color: PropTypes.string,
   wide: PropTypes.bool,
   clickHandler: PropTypes.func,
-  buttonName: PropTypes.string.isRequired,
-
 };
 
 export default Button;
