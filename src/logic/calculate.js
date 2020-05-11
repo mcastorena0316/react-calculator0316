@@ -3,14 +3,20 @@ import operate from './operate';
 const calculate = (calculator, buttonName) => {
   let { total, next, operation } = calculator;
 
-  const numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.'];
-  const operators = ['+', '-', 'X', '÷', '%'];
+  const numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+  const operators = ['+', '-', 'x', '÷', '%'];
 
   if (numbers.includes(buttonName)) {
     if (total) {
       total += buttonName;
     } else {
       total = buttonName;
+    }
+  } else if (buttonName === '.') {
+    if (total && !total.includes(buttonName)) {
+      total += buttonName;
+    } else if (!total) {
+      total = '0.';
     }
   } else if (buttonName === 'AC') {
     total = null;
@@ -39,7 +45,7 @@ const calculate = (calculator, buttonName) => {
     if (!next) {
       next = null;
       operation = buttonName;
-    } else if (!total) {
+    } else if (!total && operation !== '%') {
       total = next;
       next = null;
       operation = buttonName;

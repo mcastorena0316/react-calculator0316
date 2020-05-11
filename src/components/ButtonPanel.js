@@ -14,12 +14,12 @@ class ButtonPanel extends React.Component {
     return clickHandler(buttonName);
   }
 
-  renderButtons(i, c, d) {
+  renderButtons(name, colorbutton, widebutton) {
     return (
       <Button
-        buttonName={i}
-        color={c}
-        wide={d}
+        buttonName={name}
+        color={colorbutton}
+        wide={widebutton}
         clickHandler={this.handleClick}
       />
     );
@@ -38,7 +38,7 @@ class ButtonPanel extends React.Component {
           {this.renderButtons('7', '#e7e7e7')}
           {this.renderButtons('8', '#e7e7e7')}
           {this.renderButtons('9', '#e7e7e7')}
-          {this.renderButtons('X')}
+          {this.renderButtons('x')}
         </div>
         <div className="buttons group3">
           {this.renderButtons('4', '#e7e7e7')}
