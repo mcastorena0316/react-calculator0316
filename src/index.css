@@ -5,14 +5,16 @@ body {
 }
 
 .app {
-width: 700px;
+    width: 700px;
+    display: flex;
+    flex-direction: column;
 }
 
 .display {
     width:700px;
     height:100px;
     background-color: rgb(153, 145, 145);
-    display:flex;
+    display: flex;
     justify-content:flex-end;
     align-items: center;
 }
@@ -20,8 +22,13 @@ width: 700px;
 .display .display-result {
     padding: 10px 10px;
     color:white;
-    font-size: 50px;
+    font-size: 51px;
     font-weight: bold;
+}
+
+.button-panel {
+    display: flex;
+    flex-direction: column;
 }
 
 .buttons {
